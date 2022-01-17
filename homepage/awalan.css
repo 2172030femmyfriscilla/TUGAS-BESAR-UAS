@@ -1,0 +1,45 @@
+*{
+    margin:0; padding: 0%;
+}
+body{
+    background-color: #f8edeb;
+}
+#tombol_pertama{
+    width: 200px; height: 50px;
+    font-size: 40px;
+    margin-top: 5px;
+    margin-left: 670px;
+    background-color: #a36135;
+    border-radius: 10px;
+    color: #fbfbfb;
+}
+#atas{
+    background-color: #F8EC99;
+    height: 60px;
+}
+#gambar2{
+    height: 400px;
+    margin-top: 20px;
+    position: relative;
+}
+#gambar1{
+    margin-left: 750px;
+    height: 350px;
+    position: relative;
+}
+#femi{
+    visibility: hidden;
+    height: 500px;
+}
+#femi2{
+    visibility: hidden;
+    height: 50px;
+}
+#mulai{
+    width: 200px; height: 50px;
+    font-size: 40px;
+    border-radius: 10px;
+    color: #fbfbfb;
+    margin-left: 670px;
+    background-color: #9b2226;
+}
