@@ -12,9 +12,17 @@ body{
     background-color: #a36135;
     border-radius: 10px;
     color: #fbfbfb;
+    animation-name: warna_warni;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
 }
+@keyframes warna_warni {
+    from {background-color: #a36135;}
+    to {background-color: #d5bdaf;color: #800016;}
+}
+
 #atas{
-    background-color: #F8EC99;
+    background-color: #e9d8a6;
     height: 60px;
 }
 #gambar2{
@@ -29,17 +37,38 @@ body{
 }
 #femi{
     visibility: hidden;
-    height: 500px;
+    height: 450px;
 }
 #femi2{
     visibility: hidden;
     height: 50px;
+    margin-top: 15px;
 }
 #mulai{
-    width: 200px; height: 50px;
+    width: 250px; height: 60px;
     font-size: 40px;
     border-radius: 10px;
     color: #fbfbfb;
-    margin-left: 670px;
+    margin-left: 650px;
     background-color: #9b2226;
+}
+#mulai:hover{
+    background-color: #eddcd2;
+    color: #687259;
+    transition: 0.3s ;
+}
+#judul1{
+    margin-left: 20px;
+    font-family: 'monospace';
+    font-size: 60px;
+    display: inline-block;
+}
+#judul{
+    background-color: #c2c5aa;
+    visibility: hidden;
+    padding-left: 125px;
+    width: 700px;
+    margin-left: 360px;
+    border-radius: 15px;
+    color: #414833;
 }
