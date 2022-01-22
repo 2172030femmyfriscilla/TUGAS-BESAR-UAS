@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homepage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <title>Home Page</title>
+</head>
+<body>
+    <nav id="awalan">
+        <div id="atas" class="satu">
+            <button id="buton">
+            <div id="buton2"><img src="../asset/pikacu.png" alt="gambar_pikachu" style="height: 50px; float: left;" id="p1"></div>
+            <div id="buton1">PIKACHU !</div>
+            </button>
+        </div>
+        <div id="atas" class="dua"><button id="butondua" onclick="namakelompok()">CENAYANG KUNO</button></div>
+        
+        <div id="atas" class="tiga">
+            <button id="butontiga">
+                <div id="butontiga1" style="display: flex;"><img src="../asset/togepi.png" alt="ganbar_togepi" style="height: 50px;float: left;"></div>
+                <div id="butontiga2">Make Card</div>
+            </button>
+        </div>
+    </nav>
+    <div id="overlay">
+        <div id="overlay2">
+            <div id="titlekelompok">Kelompok 4</div><button id="exit" onclick="tutup()">&times;</button>
+            <ul>
+                <li>Femmy Friscilla Susilo (212030)</li>
+                <li>Reinard David (2172010)</li>
+            </ul>
+        </div>
+    </div>
+    <div id="kelas">
+        <button id="satu" onclick="muncul()">CLICK ME !</button>
+        <div id="kedua"></div>
+    </div>
+        <script>
+            for(a=1;a<500;a++){
+                    $.getJSON("https://pokeapi.co/api/v2/pokemon/"+a+"/",function(result){
+                        // $("#kelas").append(result.name+"<br>")
+                        console.log(result.name)
+                    })
+                }
+            function muncul(){
+                $.getJSON("https://pokeapi.co/api/v2/pokemon/", function(result){
+                console.log(result)
+                
+                
+                let b = Math.floor(Math.random()*500) 
+                $.getJSON("https://pokeapi.co/api/v2/pokemon/"+b+"/",function(result){
+                    document.getElementById("kedua").innerHTML = result.name
+                })
+            })
+            }
+            function namakelompok(){
+                document.getElementById("overlay").style.visibility ="visible"
+            }
+            function tutup(){
+                document.getElementById("overlay").style.visibility ="hidden"
+            }
+        </script>
+</body>
+</html>
