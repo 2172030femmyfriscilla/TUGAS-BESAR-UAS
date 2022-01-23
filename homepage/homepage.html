@@ -9,6 +9,7 @@
     <title>Home Page</title>
 </head>
 <body>
+    <!-- BUKA WEB INI MENGGUNAKAN BROWSER GOOGLE -->
     <nav id="awalan">
         <div id="atas" class="satu">
             <button id="buton">
@@ -35,8 +36,30 @@
         </div>
     </div>
     <div id="kelas">
-        <button id="satu" onclick="muncul()">CLICK ME !</button>
+        <div id="dalem">
+        <div id="dalem1">Pokemon apa yang kamu dapat ?</div>
+        <div id="dalem2">klik tombol dibawah untuk mengetahuinya !</div>
+        </div>
+        <button id="satu" onclick="muncul()">
+            <div style="display: inline-flex;position: relative;margin-left: -100px;"><img src="../asset/ive.png" alt="gambar_ive" style="width: 50px;"></div>
+            <div style="display: inline-flex;position: absolute;margin-top: 22px;margin-left: 5px;font-weight: bold;color: cadetblue;">AYO CARI TAHU !</div>
+        </button>
+        <button id="tombol_ulang">
+            <div style="display: inline-flex;position: relative;margin-left: -50px;"><img src="../asset/jigglypuff.png" alt="gambar_jigglypuff" style="height: 50px;"></div>
+            <div style="display: inline-flex;position: absolute;margin-top: 20px;font-weight: bold;color: #6b705c;">ULANGI</div>
+        </button>
         <div id="kedua"></div>
+        <div id="isi_gambar"></div>
+        <div id="counter">
+        <div id="spekability">
+            <div id="ability1" class="ha1"></div>
+            <div id="definisi1" class="ha2"></div>
+        </div>
+        <div id="spekability2">
+            <div id="ability2" class="ha1"></div>
+            <div id="definisi2" class="ha2"></div>
+        </div>
+        </div>
     </div>
         <script>
             for(a=1;a<500;a++){
@@ -54,14 +77,71 @@
                 $.getJSON("https://pokeapi.co/api/v2/pokemon/"+b+"/",function(result){
                     document.getElementById("kedua").innerHTML = result.name
                 })
+                $.getJSON("https://pokeapi.co/api/v2/pokemon/"+b+"/",function(result){
+                    const femay = document.getElementById("isi_gambar");
+                    setInterval(function(){
+                        setTimeout(function(){femay.innerHTML = "<img src='"+result.sprites.front_default+"' alt='gambar_"+result.name+"1'style='height:300px;' '>"},0)
+                        setTimeout(function(){femay.innerHTML = "<img src='"+result.sprites.back_default+"' alt='gambar_"+result.name+"2' style='height:300px;''>"},1000)
+                    },2000)
+
+                    // bagian div ability
+
+                    $.getJSON("https://pokeapi.co/api/v2/pokemon/"+b+"/",function(result){
+                        console.log(result.abilities[0].ability.name);
+                        document.getElementById("ability1").innerHTML = result.abilities[0].ability.name;
+                        let penjelasan1 = result.abilities[0].ability.url;
+                        console.log(penjelasan1)
+                            $.getJSON(""+penjelasan1+"",function(result){
+                                document.getElementById("definisi1").innerHTML = result.effect_entries[1].short_effect;
+                            })
+                    })
+
+                    $.getJSON("https://pokeapi.co/api/v2/pokemon/"+b+"/",function(result){
+                        document.getElementById("ability2").innerHTML = result.abilities[1].ability.name;
+                        let penjelasan2 = result.abilities[1].ability.url;
+                        $.getJSON(""+penjelasan2+"",function(result){
+                                document.getElementById("definisi2").innerHTML = result.effect_entries[1].short_effect;
+                            })
+                    })
+                })
             })
+                
             }
+            // style div isi_gambar
+            document.getElementById("isi_gambar").style.backgroundColor ="#d8e2dc"
+            document.getElementById("isi_gambar").style.height ="300px"
+            document.getElementById("isi_gambar").style.width ="300px"
+            document.getElementById("isi_gambar").style.borderRadius ="15px"
+            document.getElementById("isi_gambar").style.border ="solid 4px #005f73"
+            document.getElementById("isi_gambar").style.marginTop ="20px"
+            document.getElementById("isi_gambar").style.marginLeft ="300px"
+            
+            
             function namakelompok(){
                 document.getElementById("overlay").style.visibility ="visible"
             }
             function tutup(){
                 document.getElementById("overlay").style.visibility ="hidden"
             }
+            
+
+        </script>
+        <script>
+            // style div kedua
+            document.getElementById("kedua").style.width ="500px"
+            document.getElementById("kedua").style.backgroundColor = "#d8e2dc";
+            document.getElementById("kedua").style.color = "#2f3e46";
+            document.getElementById("kedua").style.margin = "auto"
+            document.getElementById("kedua").style.marginTop = "8px"
+            document.getElementById("kedua").style.textAlign ="center"
+            document.getElementById("kedua").style.height ="25px"
+            document.getElementById("kedua").style.paddingTop ="5px"
+            document.getElementById("kedua").style.border ="solid 2px #003049"
+            document.getElementById("kedua").style.borderRadius ="10px"
+
+            $("#tombol_ulang").click(function(){
+                location.reload();
+            })
         </script>
 </body>
 </html>
