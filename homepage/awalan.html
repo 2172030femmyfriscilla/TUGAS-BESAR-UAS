@@ -9,16 +9,22 @@
     <title>Welcome!</title>
 </head>
 <body>
+    <!-- BUKA WEB INI MENGGUNAKAN BROWSER GOOGLE -->
     <nav id="atas">
-        <button id="tombol_pertama" onclick="pertama()" id="iyey">Start</button>
+        <button id="tombol_pertama" onclick="pertama()" id="iyey">START</button>
     </nav>
-    
+    <div id="judul">
+        <div id="judul1" >SEARCH</div>
+        <div id="judul1" >POKEMON</div>
+    </div>
     <div id="femi">
         <img src="../asset/pokemon3.png" alt="pokemon3" id="gambar2">
         <img src="../asset/pokemon1.png" alt="pokemon1" id="gambar1">  
     </div>
     <div id="femi2">
-        <button id="mulai">Ayo Mulai!</button>
+        <a href="homepage.html">
+            <button id="mulai">Ayo Mulai !</button>
+        </a>
     </div>
     <!-- link pokemon : https://pokeapi.co/api/v2/pokemon/ditto -->
     <script>
@@ -26,11 +32,16 @@
             document.getElementById("femi").style.visibility = "visible"
             $("#gambar1").animate({right:'750px'})
             $("#gambar2").animate({left:'750px'})
+            document.getElementById("judul").style.visibility ="visible"
+            
+            $("#judul1").animate({right: '500px'})
+            $("#judul2").animate({left: '500px'})
+            const muncul1 = setTimeout(mulai1,3000);
+            function mulai1(){
+                document.getElementById("femi2").style.visibility = "visible"
         }
-        const muncul1 = setTimeout(mulai1,3000);
-        function mulai1(){
-            document.getElementById("femi2").style.visibility = "visible"
         }
+        
     </script>
 </body>
 </html>
