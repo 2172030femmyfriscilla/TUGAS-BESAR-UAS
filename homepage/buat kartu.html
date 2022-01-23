@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="buat kartu.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <title>Membuat Kartu !</title>
+</head>
+<body>
+    <header>
+        <nav id="atas">
+            <div id="bagian_kiri">
+                <a href="homepage.html" style="text-decoration: none;">
+                <button id="buton">
+                    <div id="buton1"><img src="../asset/skuirtle.png" alt="gambar_skuirtle" style="width: 50px;"></div>
+                    <div id="buton2">HOME</div>
+                </button>
+                </a>
+            </div>
+            <div id="judul">MEMBUAT KARTU POKEMON</div>
+        </nav>
+    </header>
+    <div id="isian">
+        <div id="isi_form">
+
+                <div id="judulform">PILIH KARAKTER POKEMON MU !</div>
+                <select name="list_pokemon" id="lebar">
+                <script>
+                    for(a=0;a<400;a++){
+                        $.getJSON("https://pokeapi.co/api/v2/pokemon/"+a+"/",function(result){
+                            $("#lebar").append("<option id='isian' value='"+result.name+"'>"+result.name+"</option>")
+                        })
+                        function hasiljadi(){
+                            let namaPokemon = document.getElementById("lebar").value;
+                            let namaOrang = document.getElementById("nama").value;
+                            console.log(namaPokemon);
+                            console.log(namaOrang);
+                            $("fotonya").empty();
+                            $("identitas").empty();
+                            $.getJSON("https://pokeapi.co/api/v2/pokemon/",function(result){
+                                for(b=0;b<400;b++){
+                                    $.getJSON("https://pokeapi.co/api/v2/pokemon/"+b+"/",function(result){
+                                        let heh = result.name.includes(namaPokemon)
+                                        if(heh == true){
+                                            console.log("berhasil")
+                                            const asik = document.getElementById("fotonya");
+                                                setInterval(function(){
+                                                    setTimeout(function(){asik.innerHTML = "<img src='"+result.sprites.front_default+"' alt='gambar_"+result.name+"1'style='height:200px;' '>"},0)
+                                                    setTimeout(function(){asik.innerHTML = "<img src='"+result.sprites.back_default+"' alt='gambar_"+result.name+"2' style='height:200px;''>"},1000)
+                                                },2000)
+                                                document.getElementById("identitas").innerHTML = namaOrang
+                                                document.getElementById("namachara").innerHTML = namaPokemon
+                                        }
+                                    })
+                                }
+                        })
+        }
+                    }
+                </script>
+                
+            </select><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nama Anda : <input type="text" name="" id="nama"><br>
+            <div style="margin-left: 300px;">
+            <input type="button" class="huah"id="tombol" onclick="hasiljadi()" value="Buat Kartu">
+            <input type="button" class="huah"id="ngulang" value="Ulang">
+            </div>
+
+        </div>
+        <div id="kartunya">
+            <div id="fotonya"></div>
+            <div id="identitas"></div>
+            <div id="judulkartu">POKEMON CARD </div>
+            <div id="namachara"></div>
+        </div>
+    </div>
+    <script>
+        $("#ngulang").click(function(){
+                location.reload();
+            })
+    </script>
+</body>
+</html>

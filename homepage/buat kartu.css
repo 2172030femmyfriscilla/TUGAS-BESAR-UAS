@@ -1,0 +1,139 @@
+*{
+    margin: 0;padding: 0;
+}
+body{
+    font-family: 'verdana';
+}
+#atas{
+    height: 100px;
+    background-color: rosybrown;
+}
+#buton{
+    display: inline-flex;
+    border-radius: 15px;
+    width: 120px;
+    margin-top: 10px; margin-left: 20px;
+}
+#buton1{
+    margin-top: 5px;margin-left: 5px;
+}
+#buton2{
+    margin-top: 30px;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #013a63;
+}
+#buton:hover{
+    background-color: #f4ece2;
+    color: #6a994e;
+}
+#judul{
+    position: fixed;
+    margin-left: 630px;
+    margin-top: -45px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f2e8cf;
+    animation-name: warna-warni;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes warna-warni{
+    from{color: #f2e8cf;}
+    to{color: #faf9f9;}
+}
+#isian{
+    background-color: #f8edeb;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+#lebar{
+    width: 400px;
+}
+
+/* style kartunya */
+#kartunya{
+    width: 650px;
+    height: 300px;
+    border-radius: 15px;
+    border: solid 4px #9a031e;
+    margin-left: 750px;
+    margin-top: -350px;
+    background-color: #f1e3d3;
+}
+#fotonya{
+    width: 200px; height: 200px;
+    border: solid 2px black;
+    margin-top: 5px; margin-left: 5px;
+    border-radius: 10px;
+    background-color: #e0fbfc;
+}
+
+/* style form */
+#isi_form{
+    background-color: #598392;
+    width: 550px;
+    border-radius: 10px;
+    height: 400px;
+    color: #f0ebd8;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+#judulform{
+    padding-top: 20px;
+    padding-left: 85px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+}
+#lebar{
+    margin-left: 60px;
+    margin-bottom: 50px;
+    height: 40px;
+    font-size: 20px;
+}
+#nama{
+    width: 280px;
+    margin-bottom: 100px;
+    height: 30px;
+    font-size: 15px;
+}
+.huah{
+    width: 80px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #edf6f9;
+    font-size: 15px;
+}
+.huah:hover{
+ background-color: silver;
+}
+#judulkartu{
+    font-size: 20px;
+    margin-left: 300px;
+    letter-spacing: 10px;
+    font-weight: bold;
+    background-color: #9a031e;
+    color: #f8edeb;
+}
+#identitas{
+    width: 400px;
+    height: 30px;
+    margin-left: 220px;
+    margin-top: -110px;
+    margin-bottom: 50px;
+    letter-spacing: 10px;
+    font-weight: bold;
+}
+#namachara{
+    width: 180px;
+    height: 30px;
+    background-color: #faf3dd;
+    margin-top: 30px;margin-left: 20px;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 8px;
+}
+
