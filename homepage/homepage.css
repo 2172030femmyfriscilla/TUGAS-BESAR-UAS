@@ -198,6 +198,32 @@ body{
     margin-top: 5px;
     
 }
+#tombolgame{
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #9b2226;
+    color: #ffe8d6;
+    font-weight: bold;
+}
+#tombolgame:hover{
+    background-color: silver;
+    color: #9b2226;
+    transition: 0.3s;
+}
+#awal{
+    width: 130px; height: 35px;
+    position: absolute;
+    margin-top: 10px; margin-left: 10px;
+    border-radius: 5px;
+    background-color: #fbc4ab;
+    color: brown;
+    font-weight: bold;
+}
+#awal:hover{
+    background-color: cornsilk;
+    color: darkcyan;
+}
 
 
 
