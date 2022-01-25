@@ -12,18 +12,22 @@
     <!-- BUKA WEB INI MENGGUNAKAN BROWSER GOOGLE -->
     <nav id="awalan">
         <div id="atas" class="satu">
+            <a href="awalan.html" style="text-decoration: none;">
             <button id="buton">
             <div id="buton2"><img src="../asset/pikacu.png" alt="gambar_pikachu" style="height: 50px; float: left;" id="p1"></div>
             <div id="buton1">PIKACHU !</div>
             </button>
+            </a>
         </div>
         <div id="atas" class="dua"><button id="butondua" onclick="namakelompok()">CENAYANG KUNO</button></div>
         
         <div id="atas" class="tiga">
+            <a href="buat kartu.html">
             <button id="butontiga">
                 <div id="butontiga1" style="display: flex;"><img src="../asset/togepi.png" alt="ganbar_togepi" style="height: 50px;float: left;"></div>
                 <div id="butontiga2">Make Card</div>
             </button>
+            </a>
         </div>
     </nav>
     <div id="overlay">
@@ -60,6 +64,11 @@
             <div id="definisi2" class="ha2"></div>
         </div>
         </div>
+        <div style="margin-top: 30px; visibility: hidden;" id="helo">
+        <div style="display: inline-flex;"><a href="../game/Perkalian.html"><button id="tombolgame">GAME 1</button></a></div>
+        <div style="display: inline-flex;"><a href="../game/Tictac.html"><BUtton id="tombolgame">GAME 2</BUtton></a></div>
+        </div>
+        <div id="tombolutamagame"><button id="awal"onclick="maingame()">BERMAIN GAME</button></div>
     </div>
         <script>
             for(a=1;a<500;a++){
@@ -143,5 +152,12 @@
                 location.reload();
             })
         </script>
+        <script>
+            function maingame(){
+                document.getElementById("helo").style.visibility ="visible"
+            }
+
+        </script>
+
 </body>
 </html>
